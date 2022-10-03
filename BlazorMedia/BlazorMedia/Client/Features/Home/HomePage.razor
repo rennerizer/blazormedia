@@ -1,0 +1,35 @@
+﻿@page "/"
+
+@inject HttpClient Http
+
+<PageTitle>Blazor Shows</PageTitle>
+
+@if (_shows == null)
+{
+    <p>Loading shows...</p>
+}
+else
+{
+    <div class="grid">
+        @foreach (var show in _shows)
+        {
+            <ShowCard Show="show" />
+        }
+    </div>
+}
+
+@code {
+    private IEnumerable<Show>? _shows;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _shows = await Http.GetFromJsonAsync<IEnumerable<Show>>("shows/show-data.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading show data: {ex.Message}");
+        }
+    }
+}

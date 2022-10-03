@@ -1,0 +1,426 @@
+[
+  {
+    "id": 1,
+    "image": "shows/show-archer.jpg",
+    "name": "Archer",
+    "rating": 79,
+    "genre": "Comedy",
+    "platform": "Hulu",
+    "description": "The suave, confident and devastatingly handsome Sterling Archer may be the world's greatest spy, but he still has issues with his friends and colleagues who live to undermine and betray one another. Whether set in 1940s Los Angeles, the jungles of South America or the dangerous islands of the South Pacific, this animated comedy spans time and place to navigate the characters' misguided misadventures that range from attempting to save the world from nuclear disaster to selling illegal narcotics to Colombian cartels.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2009,
+        "episodecount": 10
+      },
+      {
+        "number": 2,
+        "Year": 2011,
+        "episodecount": 13
+      },
+      {
+        "number": 3,
+        "Year": 2011,
+        "episodecount": 13
+      },
+      {
+        "number": 4,
+        "Year": 2013,
+        "episodecount": 13
+      },
+      {
+        "number": 5,
+        "Year": 2014,
+        "episodecount": 13
+      },
+      {
+        "number": 6,
+        "Year": 2015,
+        "episodecount": 13
+      },
+      {
+        "number": 7,
+        "Year": 2016,
+        "episodecount": 10
+      },
+      {
+        "number": 8,
+        "Year": 2017,
+        "episodecount": 8
+      },
+      {
+        "number": 9,
+        "Year": 2018,
+        "episodecount": 8
+      },
+      {
+        "number": 10,
+        "Year": 2019,
+        "episodecount": 9
+      },
+      {
+        "number": 11,
+        "Year": 2020,
+        "episodecount": 8
+      },
+      {
+        "number": 12,
+        "Year": 2021,
+        "episodecount": 8
+      },
+      {
+        "number": 13,
+        "Year": 2022,
+        "episodecount": 8
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "shows/show-better-call-saul.jpg",
+    "name": "Better Call Saul",
+    "rating": 86,
+    "genre": "Drama",
+    "platform": "Netflix",
+    "description": "Better Call Saul is an American crime and legal drama television series. This 'Breaking Bad' spin-off series is set primarily in the early-to-mid 2000s in Albuquerque, New Mexico. The series develops Jimmy McGill, an earnest lawyer and former con artist, into an egocentric criminal defense attorney known as Saul Goodman. Better Call Saul has received widespread critical acclaim, with particular praise for its acting, characters, writing, direction, and cinematography; many critics have called it a worthy successor to Breaking Bad and one of the greatest television series of all time, with some deeming it superior to its predecessor.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2015,
+        "episodecount": 10
+      },
+      {
+        "number": 2,
+        "Year": 2016,
+        "episodecount": 10
+      },
+      {
+        "number": 3,
+        "Year": 2017,
+        "episodecount": 10
+      },
+      {
+        "number": 4,
+        "Year": 2018,
+        "episodecount": 10
+      },
+      {
+        "number": 5,
+        "Year": 2020,
+        "episodecount": 10
+      },
+      {
+        "number": 6,
+        "Year": 2022,
+        "episodecount": 13
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "shows/show-big-bang-theory.jpg",
+    "name": "Big Bang Theory",
+    "rating": 61,
+    "genre": "Comedy",
+    "platform": "HBOMax",
+    "description": "The Big Bang Theory is an American television sitcom originally centering on the lives of characters living in Pasadena, California. Leonard Hofstadter and Sheldon Cooper are both brilliant physicists working at Cal Tech in Pasadena, California. They are colleagues, best friends, and roommates, although in all capacities their relationship is always tested primarily by Sheldon's regimented, deeply eccentric, and non-conventional ways. When Penny, a pretty woman and an aspiring actress from Omaha, moves into the apartment across the hall from Leonard and Sheldon's, Leonard has another aspiration in life, namely to get Penny to be his girlfriend.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2007,
+        "episodecount": 17
+      },
+      {
+        "number": 2,
+        "Year": 2008,
+        "episodecount": 23
+      },
+      {
+        "number": 3,
+        "Year": 2009,
+        "episodecount": 23
+      },
+      {
+        "number": 4,
+        "Year": 2010,
+        "episodecount": 24
+      },
+      {
+        "number": 5,
+        "Year": 2011,
+        "episodecount": 24
+      },
+      {
+        "number": 6,
+        "Year": 2012,
+        "episodecount": 24
+      },
+      {
+        "number": 7,
+        "Year": 2013,
+        "episodecount": 24
+      },
+      {
+        "number": 8,
+        "Year": 2014,
+        "episodecount": 24
+      },
+      {
+        "number": 9,
+        "Year": 2015,
+        "episodecount": 24
+      },
+      {
+        "number": 10,
+        "Year": 2016,
+        "episodecount": 24
+      },
+      {
+        "number": 11,
+        "Year": 2017,
+        "episodecount": 24
+      },
+      {
+        "number": 12,
+        "Year": 2018,
+        "episodecount": 24
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "shows/show-boardwalk-empire.jpg",
+    "name": "Boardwalk Empire",
+    "rating": 83,
+    "genre": "Drama",
+    "platform": "HBOMax",
+    "description": "Atlantic City, 1920. When alcohol was outlawed, outlaws became kings. HBO presents this epic drama series that follows the birth and rise of organized crime in 'the world's playground' at the dawn of Prohibition. Steve Buscemi heads up the cast as Enoch 'Nucky' Thompson, the city's undisputed czar who is equal parts politician and gangster.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2010,
+        "episodecount": 12
+      },
+      {
+        "number": 2,
+        "Year": 2011,
+        "episodecount": 12
+      },
+      {
+        "number": 3,
+        "Year": 2012,
+        "episodecount": 12
+      },
+      {
+        "number": 4,
+        "Year": 2013,
+        "episodecount": 12
+      },
+      {
+        "number": 5,
+        "Year": 2014,
+        "episodecount": 8
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "shows/show-cyberpunk-edgerunners.jpg",
+    "name": "Cyberpunk: Edgerunners",
+    "rating": 80,
+    "genre": "SciFi",
+    "platform": "Netflix",
+    "description": "Cyberpunk: Edgerunners tells a standalone, 10-episode story about a street kid trying to survive in a technology and body modification-obsessed city of the future. Having everything to lose, he chooses to stay alive by becoming an edgerunner—a mercenary outlaw also known as a cyberpunk.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2022,
+        "episodecount": 10
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "shows/show-star-trek-voyager.jpg",
+    "name": "Star Trek: Voyager",
+    "rating": 66,
+    "genre": "SciFi",
+    "platform": "ParamountPlus",
+    "description": "Star Trek: Voyager follows the adventures of the Federation starship Voyager, which is under the command of Captain Kathryn Janeway. Voyager is in pursuit of a rebel Maquis ship in a dangerous part of the Alpha Quadrant when it is suddenly thrown 70,000 light years away to the Delta Quadrant. With much of her crew dead, Captain Janeway is forced to join forces with the Maquis to find a way back home.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 1995,
+        "episodecount": 16
+      },
+      {
+        "number": 2,
+        "Year": 1995,
+        "episodecount": 26
+      },
+      {
+        "number": 3,
+        "Year": 1996,
+        "episodecount": 26
+      },
+      {
+        "number": 4,
+        "Year": 1997,
+        "episodecount": 26
+      },
+      {
+        "number": 5,
+        "Year": 1998,
+        "episodecount": 26
+      },
+      {
+        "number": 6,
+        "Year": 1999,
+        "episodecount": 26
+      },
+      {
+        "number": 7,
+        "Year": 2000,
+        "episodecount": 26
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "shows/show-supernatural.jpg",
+    "name": "Supernatural",
+    "rating": 60,
+    "genre": "Horror",
+    "platform": "Netflix",
+    "description": "Supernatural stars Dean and Sam Winchester, two brothers who travel the country looking for their missing father and battling evil spirits along the way. The two brothers, bound by tragedy and blood to their mission, travel across the country encountering terrifying and dangerous forces most believe to be nothing but superstition and folklore.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2005,
+        "episodecount": 22
+      },
+      {
+        "number": 2,
+        "Year": 2006,
+        "episodecount": 22
+      },
+      {
+        "number": 3,
+        "Year": 2007,
+        "episodecount": 16
+      },
+      {
+        "number": 4,
+        "Year": 2008,
+        "episodecount": 22
+      },
+      {
+        "number": 5,
+        "Year": 2009,
+        "episodecount": 22
+      },
+      {
+        "number": 6,
+        "Year": 2010,
+        "episodecount": 22
+      },
+      {
+        "number": 7,
+        "Year": 2011,
+        "episodecount": 23
+      },
+      {
+        "number": 8,
+        "Year": 2012,
+        "episodecount": 23
+      },
+      {
+        "number": 9,
+        "Year": 2013,
+        "episodecount": 23
+      },
+      {
+        "number": 10,
+        "Year": 2014,
+        "episodecount": 23
+      },
+      {
+        "number": 11,
+        "Year": 2015,
+        "episodecount": 23
+      },
+      {
+        "number": 12,
+        "Year": 2016,
+        "episodecount": 23
+      },
+      {
+        "number": 13,
+        "Year": 2017,
+        "episodecount": 23
+      },
+      {
+        "number": 14,
+        "Year": 2018,
+        "episodecount": 20
+      },
+      {
+        "number": 15,
+        "Year": 2019,
+        "episodecount": 20
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "shows/show-the-munsters.jpg",
+    "name": "The Munsters",
+    "rating": 83,
+    "genre": "Comedy",
+    "platform": "Peacock",
+    "description": "The family at 1313 Mockingbird Lane is a little... different. Dad Herman looks like Frankenstein's monster; mom Lily and her dad, Grandpa, are vampires; and son Eddie is a werewolf. Poor Marilyn, their niece, is the odd one out -- she's just a normal girl. And the family doesn't like to call attention to her unfortunate looks.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 1964,
+        "episodecount": 38
+      },
+      {
+        "number": 2,
+        "Year": 1965,
+        "episodecount": 32
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "shows/show-yellowstone.jpg",
+    "name": "Yellowstone",
+    "rating": 80,
+    "genre": "Drama",
+    "platform": "Peacock",
+    "description": "Oscar and Emmy winner Kevin Costner is the marquee attraction of the ensemble cast in this drama series, starring as the patriarch of a powerful, complicated family of ranchers. A sixth-generation homesteader and devoted father, John Dutton controls the largest contiguous ranch in the United States. He operates in a corrupt world where politicians are compromised by influential oil and lumber corporations and land grabs make developers billions. Amid shifting alliances, unsolved murders, open wounds, and hard-earned respect, Dutton's property is in constant conflict with those it borders -- an expanding town, an Indian reservation, and America's first national park.",
+    "seasons": [
+      {
+        "number": 1,
+        "Year": 2018,
+        "episodecount": 9
+      },
+      {
+        "number": 2,
+        "Year": 2019,
+        "episodecount": 10
+      },
+      {
+        "number": 3,
+        "Year": 2020,
+        "episodecount": 10
+      },
+      {
+        "number": 4,
+        "Year": 2021,
+        "episodecount": 10
+      }
+    ]
+  }
+]
