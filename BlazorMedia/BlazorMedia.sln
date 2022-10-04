@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.Server", "Blazo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.Client", "BlazorMedia\Client\BlazorMedia.Client.csproj", "{8AE80E7B-CB1D-4C56-9218-5B3CB940D081}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorMedia.DomainModel", "BlazorMedia.DomainModel\BlazorMedia.DomainModel.csproj", "{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.DomainModel", "BlazorMedia.DomainModel\BlazorMedia.DomainModel.csproj", "{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

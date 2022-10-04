@@ -10,16 +10,18 @@
 }
 else
 {
+    <ShowDetails Show="_selectedShow" />
     <div class="grid">
         @foreach (var show in _shows)
         {
-            <ShowCard Show="show" />
+            <ShowCard Show="show" OnSelected="HandleShowSelected" />
         }
     </div>
 }
 
 @code {
     private IEnumerable<Show>? _shows;
+    private Show? _selectedShow;
 
     protected override async Task OnInitializedAsync()
     {
@@ -32,4 +34,7 @@ else
             Console.WriteLine($"There was a problem loading show data: {ex.Message}");
         }
     }
+
+    private void HandleShowSelected(Show show)
+        => _selectedShow = show;
 }
