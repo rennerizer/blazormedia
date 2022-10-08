@@ -4,15 +4,18 @@
 
 <PageTitle>Blazor Shows</PageTitle>
 
-@if (_shows == null)
+@if (_filteredShows == null)
 {
     <p>Loading shows...</p>
 }
 else
 {
     <ShowDetails Show="_selectedShow" />
+
+    <ShowSearch OnSearch="HandleSearch" />
+
     <div class="grid">
-        @foreach (var show in _shows)
+        @foreach (var show in _filteredShows)
         {
             <ShowCard Show="show" OnSelected="HandleShowSelected" />
         }
@@ -21,6 +24,9 @@ else
 
 @code {
     private IEnumerable<Show>? _shows;
+
+    private IEnumerable<Show>? _filteredShows;
+
     private Show? _selectedShow;
 
     protected override async Task OnInitializedAsync()
@@ -28,6 +34,8 @@ else
         try
         {
             _shows = await Http.GetFromJsonAsync<IEnumerable<Show>>("shows/show-data.json");
+
+            _filteredShows = _shows;
         }
         catch (HttpRequestException ex)
         {
@@ -37,4 +45,13 @@ else
 
     private void HandleShowSelected(Show show)
         => _selectedShow = show;
+
+    private void HandleSearch(string searchTerm)
+    {
+        if (searchTerm == string.Empty)
+            _filteredShows = _shows;
+
+        _filteredShows = _filteredShows!
+            .Where(show => show.Name.Contains(searchTerm, StringComparison.CurrentCultureIgnoreCase));
+    }
 }

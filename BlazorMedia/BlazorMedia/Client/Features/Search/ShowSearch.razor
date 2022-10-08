@@ -1,0 +1,28 @@
+﻿@inject NavigationManager NavManager
+
+<PageTitle>Search Shows</PageTitle>
+
+<div class="jumbotron">
+    <h1 class="display-4 text-center">Welcome to Blazor Media</h1>
+    <p class="lead text-center">
+        Find the most popular show using our Blazing fast search!</p>
+    <p class="mt-4">
+        <input @onkeydown="SearchForShow" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for show..." class="form-control form-control-lg" />
+    </p> 
+</div>
+
+@code { 
+    private string _searchTerm = "";
+
+    [Parameter, EditorRequired]
+    public EventCallback<string> OnSearch { get; set; }
+
+    private async void SearchForShow(KeyboardEventArgs args) {
+        if (args.Key != "Enter") return; 
+
+        //NavManager.NavigateTo($"/search/{_searchTerm}");
+        //@onclick="@(async () => await OnSelected.InvokeAsync(Show))
+
+        await OnSearch.InvokeAsync(_searchTerm);
+    }
+}
