@@ -7,7 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.Server", "Blazo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.Client", "BlazorMedia\Client\BlazorMedia.Client.csproj", "{8AE80E7B-CB1D-4C56-9218-5B3CB940D081}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.DomainModel", "BlazorMedia.DomainModel\BlazorMedia.DomainModel.csproj", "{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.DomainModel", "BlazorMedia\Shared\BlazorMedia.DomainModel\BlazorMedia.DomainModel.csproj", "{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorMedia.QuickGrid", "BlazorMedia\Shared\BlazorMedia.QuickGrid\BlazorMedia.QuickGrid.csproj", "{23F62835-FB20-47F3-9750-61690499945B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEndClient", "FrontEndClient", "{3061EB73-48AA-401B-9F77-85DAB48B19F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiServer", "ApiServer", "{E95C88B6-726C-4322-8FAF-08BAEF871873}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{9C09812C-458B-4888-96E9-D0EF5BA8C102}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +35,19 @@ Global
 		{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{635AF384-F3F2-4197-AD56-9B4F56CD3A5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F62835-FB20-47F3-9750-61690499945B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F62835-FB20-47F3-9750-61690499945B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F62835-FB20-47F3-9750-61690499945B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F62835-FB20-47F3-9750-61690499945B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64D80A81-F167-4F11-9EC9-213739BD0FAD} = {E95C88B6-726C-4322-8FAF-08BAEF871873}
+		{8AE80E7B-CB1D-4C56-9218-5B3CB940D081} = {3061EB73-48AA-401B-9F77-85DAB48B19F4}
+		{635AF384-F3F2-4197-AD56-9B4F56CD3A5D} = {9C09812C-458B-4888-96E9-D0EF5BA8C102}
+		{23F62835-FB20-47F3-9750-61690499945B} = {9C09812C-458B-4888-96E9-D0EF5BA8C102}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {263F6108-1FE7-41FE-9CDE-0783A690D4AE}

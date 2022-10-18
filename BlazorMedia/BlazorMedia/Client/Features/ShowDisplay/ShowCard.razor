@@ -1,0 +1,26 @@
+﻿<div class="card shadow" style="width: 18rem;">
+    <img src="@Show.Image" class="card-img-top" alt="@Show.Name">
+    <div class="card-body">
+        <h5 class="card-title">
+            @Show.Name
+        </h5>
+        <h6 class="card-subtitle mb-3 text-muted">
+            <span class="oi oi-thumb-up"></span> @Show.Rating
+        </h6>
+        <div class="d-flex justify-content-between">
+            <span><span class="oi oi-bar-chart mr-2"></span> @Show.Genre</span>
+            <span><span class="oi oi-play-circle mr-2"></span> @Show.Platform</span>
+        </div>
+        <button class="btn btn-primary mt-2" title="View" @onclick="@(async () => await OnSelected.InvokeAsync(Show))">
+            <i class="bi bi-binoculars"></i>
+        </button>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired] 
+    public Show Show { get; set; } = default!;
+
+    [Parameter, EditorRequired] 
+    public EventCallback<Show> OnSelected { get; set; }
+}

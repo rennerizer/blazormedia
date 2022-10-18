@@ -1,0 +1,99 @@
+﻿@page "/"
+
+@inject HttpClient Http
+@inject NavigationManager NavManager
+
+<PageTitle>Blazor Shows</PageTitle>
+
+<div  class="container mt-5 mb-5">
+@if (_filteredShows == null)
+{
+    <p>Loading shows...</p>
+}
+else
+{
+    <ShowDetails Show="_selectedShow" OnClose="HandleShowDetailsClose" />
+
+    <ShowSearch OnSearch="HandleSearch" />
+
+    <ViewSwitcher>
+        <GridTemplate>
+            <div class="grid">
+                @foreach (var show in _filteredShows)
+                {
+                    <ShowCard Show="show" OnSelected="HandleShowSelected" />
+                }
+            </div>
+        </GridTemplate>
+        <TableTemplate>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Platform</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var show in _filteredShows)
+                    {
+                        <tr>
+                            <th scope="col">@show.Name</th>
+                            <td>@show.Platform</td>
+                            <td>@show.Genre</td>
+                            <td>@show.Rating</td>
+                            <td class="text-right">
+                                <button @onclick="@(() => HandleShowSelected(show))" title="View" class="btn btn-primary">
+                                    <i class="bi bi-binoculars"></i>
+                                </button> 
+                                <button @onclick="@(() => NavManager.NavigateTo($"/edit-show/{show.Id}"))" title="Edit" class="btn btn-outline-secondary">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </TableTemplate>
+    </ViewSwitcher>
+}
+</div>
+
+@code {
+    private IEnumerable<Show>? _shows;
+
+    private IEnumerable<Show>? _filteredShows;
+
+    private Show? _selectedShow;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _shows = await Http.GetFromJsonAsync<IEnumerable<Show>>("shows/show-data.json");
+
+            _filteredShows = _shows;
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading show data: {ex.Message}");
+        }
+    }
+
+    private void HandleShowSelected(Show show)
+        => _selectedShow = show;
+
+    private void HandleShowDetailsClose()
+        => _selectedShow = null;
+
+    private void HandleSearch(string searchTerm)
+    {
+        if (searchTerm == string.Empty)
+            _filteredShows = _shows;
+
+        _filteredShows = _filteredShows!
+            .Where(show => show.Name.Contains(searchTerm, StringComparison.CurrentCultureIgnoreCase));
+    }
+}

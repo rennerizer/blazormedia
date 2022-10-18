@@ -1,0 +1,125 @@
+﻿@page "/reviewers"
+
+@using Microsoft.EntityFrameworkCore
+
+@inject DataSynchronizer DataSynchronizer
+@implements IDisposable
+
+<PageTitle>Reviewers</PageTitle>
+<SyncStatus />
+<ReviewerDetails Reviewer="selectedReviewer" OnHide="@(() => { selectedReviewer = null; })" />
+
+@if (db is not null)
+{
+    <div class="reviewers-grid">
+        <Grid Virtualize="true" Items="@GetFilteredReviewers()" ItemKey="@(x => x.ReviewerId)" ItemSize="35">
+
+            <TemplateColumn Title="Platform" SortBy="@(items => items.SortByAscending(x => x.Platform).ThenAscending(x => x.Genre))" Class="col-category">
+                <ChildContent>@context.Platform / @context.Genre</ChildContent>
+                <ColumnOptions>
+                    <p>Platform (@platforms.Length)</p>
+                    <select multiple class="w-64 bg-gray-100 border-grey-500 border my-4" @bind="platforms" @onclick="@(() => genres = Array.Empty<string>())">
+                        @foreach (var name in db.Reviewers.Select(x => x.Platform).Distinct())
+                        {
+                            <option>@name</option>
+                        }
+                    </select>
+
+                    <p>Genre (@genres.Length)</p>
+                    <select multiple class="w-64 bg-gray-100 border-grey-500 border my-4" @bind="genres">
+                        @foreach (var name in db.Reviewers.Where(x => platforms.Contains(x.Platform)).Select(x => x.Genre).Distinct())
+                        {
+                            <option>@name</option>
+                        }
+                    </select>
+
+                    <div><button class="bg-gray-200 px-5 py-1 mb-2" @onclick="@(() => { platforms = Array.Empty<string>(); genres = Array.Empty<string>(); })">Reset</button></div>
+                </ColumnOptions>
+            </TemplateColumn>
+
+            <PropertyColumn Title="Name" Property="@(x => x.Name)" Class="col-name" OnCellClicked="@((Reviewer reviewer) => { selectedReviewer = reviewer; })">
+                <ColumnOptions>
+                    <input @bind="searchName" @bind:event="oninput" type="search" placeholder="Search..." />
+                </ColumnOptions>
+            </PropertyColumn>
+
+            <PropertyColumn Title="Location" Property="@(x => x.Location)" Class="col-location" />
+
+            <PropertyColumn Title="Reviews" Property="@(x => x.Reviews)" Format="N0" Align="Align.Right" Class="col-stock">
+                <ColumnOptions>
+                    <p>Min reviews</p>
+                    <input type="range" @bind="minReviews" @bind:event="oninput" min="0" max="50000" />
+                    <p>Max reviews</p>
+                    <input type="range" @bind="maxReviews" @bind:event="oninput" min="0" max="50000" />
+                </ColumnOptions>
+            </PropertyColumn>
+
+            <PropertyColumn Title="Revenue ($)" Property="@(x => x.Revenue/100)" Format="N0" Align="Align.Right" Class="col-cost" />
+
+        </Grid>
+        <div class="status-bar">
+            Showing @GetFilteredReviewers()?.Count().ToString("N0") items
+        </div>
+    </div>
+}
+
+@code {
+    ClientSideDbContext? db;
+
+    [Parameter] public string? SearchName { get; set; }
+
+    string[] platforms = Array.Empty<string>();
+    string[] genres = Array.Empty<string>();
+    string searchName = string.Empty;
+    int minReviews, maxReviews = 50000;
+    Reviewer? selectedReviewer;
+
+    IQueryable<Reviewer>? GetFilteredReviewers()
+    {
+        if (db is null)
+        {
+            return null;
+        }
+
+        var result = db.Reviewers.AsNoTracking().AsQueryable();
+        if (platforms.Any())
+        {
+            result = result.Where(x => platforms.Contains(x.Platform));
+        }
+        if (genres.Any())
+        {
+            result = result.Where(x => genres.Contains(x.Genre));
+        }
+        if (!string.IsNullOrEmpty(searchName))
+        {
+            result = result.Where(x => EF.Functions.Like(x.Name, searchName.Replace("%", "\\%") + "%", "\\"));
+        }
+        if (minReviews > 0)
+        {
+            result = result.Where(x => x.Reviews >= minReviews);
+        }
+        if (maxReviews < 50000)
+        {
+            result = result.Where(x => x.Reviews <= maxReviews);
+        }
+
+        return result;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        db = await DataSynchronizer.GetPreparedDbContextAsync();
+        DataSynchronizer.OnUpdate += StateHasChanged;
+    }
+
+    protected override void OnParametersSet()
+    {
+        searchName = SearchName ?? string.Empty;
+    }
+
+    public void Dispose()
+    {
+        db?.Dispose();
+        DataSynchronizer.OnUpdate -= StateHasChanged;
+    }
+}

@@ -1,13 +1,22 @@
+using BlazorMedia.Server;
+using BlazorMedia.Server.Data;
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services
+    .AddDbContext<ApplicationDbContext>(options => options.UseSqlite(connectionString));
 
+builder.Services.AddGrpc();
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+
+SeedData.EnsureSeeded(app.Services);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -27,7 +36,8 @@ app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseGrpcWeb();
+app.MapGrpcService<ReviewersService>().EnableGrpcWeb();
 
 app.MapRazorPages();
 app.MapControllers();

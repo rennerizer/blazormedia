@@ -7,7 +7,7 @@
     <p class="lead text-center">
         Find the most popular show using our Blazing fast search!</p>
     <p class="mt-4">
-        <input @onkeydown="SearchForShow" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for show..." class="form-control form-control-lg" />
+        <input @onkeyup="SearchForShow" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for show..." class="form-control form-control-lg" />
     </p> 
 </div>
 
@@ -18,7 +18,7 @@
     public EventCallback<string> OnSearch { get; set; }
 
     private async void SearchForShow(KeyboardEventArgs args) {
-        if (args.Key != "Enter") return; 
+        //if (args.Key != "Enter") return; 
 
         //NavManager.NavigateTo($"/search/{_searchTerm}");
         //@onclick="@(async () => await OnSelected.InvokeAsync(Show))

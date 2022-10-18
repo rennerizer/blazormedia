@@ -1,0 +1,34 @@
+﻿@page "/grpc"
+
+@using Grpc.Net.Client
+@using Grpc.Net.Client.Web
+
+<PageTitle>Grpc Test</PageTitle>
+
+<h1>Reviewers from Grpc Service</h1>
+
+@foreach (var reviewer in model.Reviewers)
+{
+    <p>Name : @reviewer.Name</p>
+}
+
+@code {
+    private BlazorMedia.Client.ReviewersReply model = new BlazorMedia.Client.ReviewersReply();
+
+    protected override async Task OnInitializedAsync()
+    {
+        using
+        var channel = GrpcChannel.ForAddress("https://localhost:7170/", new GrpcChannelOptions
+            {
+                HttpHandler = new GrpcWebHandler(new HttpClientHandler())
+            });
+
+        //var client = new BlazorMedia.Client.Car.CarClient(channel);
+
+        var client = new BlazorMedia.Client.ReviewerData.ReviewerDataClient(channel);
+
+        //model = await client.GetCarsAsync(new BlazorMedia.Client.CarsRequest { });
+
+        model = await client.GetReviewersAsync(new BlazorMedia.Client.ReviewersRequest { });
+    }
+}

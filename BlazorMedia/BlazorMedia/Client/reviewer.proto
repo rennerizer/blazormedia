@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "BlazorMedia.Client";
+
+service ReviewerData { 
+	rpc GetReviewers (ReviewersRequest) returns (ReviewersReply); 
+}
+
+message ReviewersRequest {
+	int64 modifiedSinceTicks = 1;
+	int32 maxCount = 2;
+}
+
+message ReviewersReply {
+	repeated Reviewer reviewers = 1;
+	int32 modifiedCount = 2;
+}
+
+message Reviewer {
+	int32 reviewerId = 1;
+	int64 modifiedTicks = 2;
+	string platform = 3;
+	string genre = 4;
+	string name = 5;
+	string location = 6;
+	int32 reviews = 7;
+	int64 revenue = 8;
+}
